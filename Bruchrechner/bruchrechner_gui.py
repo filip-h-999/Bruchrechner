@@ -53,10 +53,6 @@ class Bruchrechner_GUI:
         createBtn("*", 110, self.multiplication)
         createBtn("/", 160, self.division)
 
-        button1 = Button(window, text=' 1 ', fg='black', bg='red',
-                         command=lambda: self.int1.set(2), height=1, width=7)
-        button1.grid(row=1, column=1)
-
     def setAndGet(self):
         self.derRechner.setBruch1Zehler(self.int1.get())
         self.derRechner.setBruch1Nenner(self.int2.get())
