@@ -29,7 +29,7 @@ class Bruchrechner_GUI:
 
         def createEntry(textvar: IntVar, posX: int, posY: int):
             entry = Entry(window, width=3, textvariable=textvar)
-            entry.place(x=posX, y=posY)
+            entry.place(x=posX, y=posY, width=30)
 
         self.int1 = IntVar()
         createEntry(self.int1, 18, 50)
@@ -45,13 +45,14 @@ class Bruchrechner_GUI:
         createEntry(self.int6, 162, 80)
 
         def createBtn(symbol: str, posX: int, cmd):
-            btn = Button(window, text=symbol, font='{Arial} 13', command=cmd, bg="light green")
+            btn = Button(window, text=symbol, font='{Arial} 13',
+                         command=cmd, bg="light green")
             btn.place(x=posX, y=130)
 
-        createBtn("+", 18, self.addition)
-        createBtn("-", 65, self.subtraction)
-        createBtn("*", 110, self.multiplication)
-        createBtn("/", 160, self.division)
+        createBtn("+", 18+6, self.addition)
+        createBtn("-", 65+6, self.subtraction)
+        createBtn("*", 110+6, self.multiplication)
+        createBtn("/", 155+6, self.division)
 
     def setAndGet(self):
         self.derRechner.setBruch1Zehler(self.int1.get())
