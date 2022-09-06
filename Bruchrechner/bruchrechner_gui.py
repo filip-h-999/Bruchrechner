@@ -31,6 +31,10 @@ class Bruchrechner_GUI:
             entry = Entry(window, width=3, textvariable=textvar)
             entry.place(x=posX, y=posY, width=30)
 
+        def createLabel(textvar: IntVar, posX: int, posY: int, Height: int):
+            lab = Label(window, fg="black", relief="raised", textvariable=textvar)
+            lab.place(x=posX, y=posY, width=30, height=Height)
+
         self.int1 = IntVar()
         createEntry(self.int1, 18, 50)
         self.int2 = IntVar()
@@ -39,10 +43,11 @@ class Bruchrechner_GUI:
         createEntry(self.int3, 88, 50)
         self.int4 = IntVar()
         createEntry(self.int4, 88, 80)
+
         self.int5 = IntVar()
-        createEntry(self.int5, 162, 50)
+        createLabel(self.int5, 162, 50, 20)
         self.int6 = IntVar()
-        createEntry(self.int6, 162, 80)
+        createLabel(self.int6, 162, 80, 20)
 
         def createBtn(symbol: str, posX: int, cmd):
             btn = Button(window, text=symbol, font='{Arial} 13',
