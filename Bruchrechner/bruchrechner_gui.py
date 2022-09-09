@@ -12,16 +12,16 @@ class Bruchrechner_GUI:
         self.derRechner = Bruchrechner()
 
         def createLabel(t: str, posX: int):
-            la = Label(window, text=t)
-            la.place(x=posX, y=10)
+            label = Label(window, text=t)
+            label.place(x=posX, y=10)
 
         createLabel("Bruch 1", 10)
         createLabel("Bruch 2", 78)
         createLabel("Ergebnis", 150)
 
-        self.la4_text = StringVar()
-        self.la4_text.set("+")
-        la4 = Label(window, textvariable=self.la4_text, font='{Arial} 14')
+        self.operatorText = StringVar()
+        self.operatorText.set("+")
+        la4 = Label(window, textvariable=self.operatorText, font='{Arial} 14')
         la4.place(x=54, y=60)
 
         la5 = Label(window, text='=', font='{Arial} 14')
@@ -68,22 +68,22 @@ class Bruchrechner_GUI:
         self.int6.set(self.derRechner.getErgebnisNenner())
 
     def addition(self):
-        self.la4_text.set("+")
+        self.operatorText.set("+")
         self.setAndGet()
         self.derRechner.addition()
 
     def subtraction(self):
-        self.la4_text.set("-")
+        self.operatorText.set("-")
         self.setAndGet()
         self.derRechner.subtraction()
 
     def multiplication(self):
-        self.la4_text.set("*")
+        self.operatorText.set("*")
         self.setAndGet()
         self.derRechner.multiplication()
 
     def division(self):
-        self.la4_text.set("/")
+        self.operatorText.set("/")
         self.setAndGet()
         self.derRechner.division()
 
